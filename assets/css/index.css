@@ -245,10 +245,63 @@ can be also done with: .flow > * + * {}
 /* -------------------------------------------- */
 
 .large-button {
+	position: relative;
+	z-index: 1;
 	display: grid;
 	place-items: center;
 	padding: 0 2rem;
 	border-radius: 50%;
 	aspect-ratio: 1;
 	text-decoration: none;
+}
+
+.large-button::after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	background: hsl(var(--color-white) / 0.15);
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	opacity: 0;
+	transition: opacity 500ms linear, 750ms ease-in-out;
+}
+
+/* animatons on hover, focus */
+.large-button:hover::after,
+.large-button:focus::after {
+	opacity: 1;
+	transform: scale(1.5);
+}
+
+.primary-navigation {
+	--gap: 8rem;
+	--underline-gap: 2rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.primary-navigation a {
+	text-decoration: none;
+}
+
+.primary-navigation a > span {
+	font-weight: 700;
+	margin-right: 0.5em;
+}
+
+/* selecting every direct ascendant child */
+.underline-indicators > * {
+	padding: var(--underline-gap, 1rem) 0;
+	border-bottom: 0.2rem solid hsl(var(--color-white) / 0);
+}
+
+.underline-indicators > *:hover,
+.underline-indicators > *:focus {
+	border-color: hsl(var(--color-white) / 0.5);
+}
+
+.underline-indicators > .active {
+	border-color: hsl(var(--color-white) / 1);
 }

@@ -426,3 +426,29 @@ can be also done with: .flow > * + * {}
 	color: hsl(var(--color-dark));
 	background-color: hsl(var(--color-white) / 1);
 }
+
+/* -------------------------------------------- */
+/* Page specific background                     */
+/* -------------------------------------------- */
+body {
+	background-size: cover;
+	background-position: bottom center;
+}
+/* home */
+
+.home {
+	background-image: url(../home/background-home-mobile.jpg);
+}
+
+@media (min-width: 35rem) {
+	.home {
+		background-position: center center;
+		background-image: url(../home/background-home-tablet.jpg);
+	}
+}
+
+@media (min-width: 45rem) {
+	.home {
+		background-image: url(../home/background-home-desktop.jpg);
+	}
+}

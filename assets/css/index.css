@@ -21,12 +21,12 @@
 	--color-white: 0 0% 100%;
 
 	/* font-sizes */
-	--fs-900: 9.375rem;
-	--fs-800: 6.25rem;
-	--fs-700: 3.5rem;
-	--fs-600: 2rem;
+	--fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+	--fs-800: 3.5rem;
+	--fs-700: 1.5rem;
+	--fs-600: 1rem;
 	--fs-500: 1.75rem;
-	--fs-400: 1.125rem;
+	--fs-400: 0.9375rem;
 	--fs-300: 1rem;
 	--fs-200: 0.875rem;
 
@@ -34,6 +34,28 @@
 	--ff-serif: "Bellefair", serif;
 	--ff-sans-cond: "Barlow Condensed", sans-serif;
 	--ff-sans-normal: "Barlow", sans-serif;
+}
+
+/* tablet size */
+@media (min-width: 35em) {
+	:root {
+		--fs-800: 5rem;
+		--fs-700: 2.5rem;
+		--fs-600: 1.5rem;
+		--fs-400: 1rem;
+	}
+}
+
+/* desktop size */
+@media (min-width: 45em) {
+	:root {
+		/* font-sizes */
+		--fs-800: 6.25rem;
+		--fs-700: 3.5rem;
+		--fs-600: 2rem;
+		--fs-400: 1.125rem;
+		--fs-200: 0.875rem;
+	}
 }
 
 /* -------------------------------------------- */
@@ -60,11 +82,12 @@ p {
 }
 
 body {
+	font-family: var(--ff-sans-normal);
 	line-height: 1.5;
 	min-height: 100vh;
+	display: grid;
+	grid-template-rows: min-content 1fr;
 	/* font-size: 62.5%; */
-
-	font-family: var(--ff-sans-normal);
 }
 
 html {
@@ -114,6 +137,10 @@ select {
 	gap: var(--gap, 1rem);
 }
 
+.d-block {
+	display: block;
+}
+
 /* 
 selecting everything but first child also not adding specificity!!! 
 can be also done with: .flow > * + * {}
@@ -127,6 +154,52 @@ can be also done with: .flow > * + * {}
 	padding-inline: 2em;
 	max-width: 80rem;
 	margin-inline: auto;
+}
+
+.grid-container {
+	text-align: center;
+	border: 5px solid limegreen;
+	display: grid;
+	place-items: center;
+	padding-inline: 1rem;
+}
+
+.grid-container * {
+	max-width: 50ch;
+}
+
+@media (min-width: 45rem) {
+	.grid-container {
+		text-align: left;
+		column-gap: var(--container-gap, 2rem);
+		grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(
+				2rem,
+				1fr
+			);
+	}
+
+	.grid-container > *:first-child {
+		grid-column: 2;
+		outline: 1px solid red;
+	}
+
+	.grid-container > *:last-child {
+		grid-column: 3;
+		outline: 1px solid orange;
+	}
+
+	.grid-container--home {
+		padding-bottom: max(6rem, 20vh);
+		align-items: end;
+	}
+}
+
+.grid-container > *:first-child {
+	outline: 1px solid red;
+}
+
+.grid-container > *:last-child {
+	outline: 1px solid orange;
 }
 
 .sr-only {
@@ -245,9 +318,10 @@ can be also done with: .flow > * + * {}
 /* -------------------------------------------- */
 
 .large-button {
+	font-size: 2rem;
 	position: relative;
 	z-index: 1;
-	display: grid;
+	display: inline-grid;
 	place-items: center;
 	padding: 0 2rem;
 	border-radius: 50%;
@@ -312,4 +386,43 @@ can be also done with: .flow > * + * {}
 
 .tab-list {
 	--gap: 2rem;
+}
+
+.dot-indicators > * {
+	cursor: pointer;
+	padding: 0.5em;
+	border: 0;
+	border-radius: 50%;
+	background-color: hsl(var(--color-white) / 0.15);
+}
+
+.dot-indicators > *:hover,
+.dot-indicators > *:focus {
+	background-color: hsl(var(--color-white) / 0.35);
+}
+
+.dot-indicators > .active,
+.dot-indicators > [aria-selected="true"] {
+	background-color: hsl(var(--color-white) / 1);
+}
+
+.number-indicators > * {
+	cursor: pointer;
+	padding: 1em 2em;
+	aspect-ratio: 1/1;
+	border: 2px solid hsl(var(--color-white) / 0.15);
+	border-radius: 50%;
+	background-color: hsl(var(--color-white) / 0);
+	color: hsl(var(--color-white) / 1);
+}
+
+.number-indicators > *:hover,
+.number-indicators > *:focus {
+	border-color: hsl(var(--color-white) / 0.5);
+}
+
+.number-indicators > .active,
+.number-indicators > [aria-selected="true"] {
+	color: hsl(var(--color-dark));
+	background-color: hsl(var(--color-white) / 1);
 }

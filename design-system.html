@@ -215,7 +215,10 @@
 						>
 					</div>
 
-					<div style="margin-bottom: 50vh">
+					<div
+						class="flow"
+						style="margin-bottom: 50vh; --flow-space: 4rem"
+					>
 						<!-- Tabs -->
 						<div class="tab-list underline-indicators flex">
 							<button
@@ -239,8 +242,39 @@
 						</div>
 
 						<!-- Dots -->
+						<div class="dot-indicators flex">
+							<button aria-selected="true">
+								<span class="sr-only">Slide title</span>
+							</button>
+							<button aria-selected="false">
+								<span class="sr-only">Slide title</span>
+							</button>
+							<button aria-selected="false">
+								<span class="sr-only">Slide title</span>
+							</button>
+						</div>
 
 						<!-- Numbers -->
+						<div class="number-indicators flex">
+							<button
+								class="fs-400 ff-serif"
+								aria-selected="true"
+							>
+								1
+							</button>
+							<button
+								class="fs-400 ff-serif"
+								aria-selected="false"
+							>
+								2
+							</button>
+							<button
+								class="fs-400 ff-serif"
+								ff-serifaria-selected="false"
+							>
+								3
+							</button>
+						</div>
 					</div>
 				</div>
 			</section>

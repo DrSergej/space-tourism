@@ -87,6 +87,7 @@ body {
 	min-height: 100vh;
 	display: grid;
 	grid-template-rows: min-content 1fr;
+	overflow-x: hidden;
 	/* font-size: 62.5%; */
 }
 
@@ -353,19 +354,47 @@ can be also done with: .flow > * + * {}
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	background: hsl(var(--color-dark) / 0.95);
+	/* 	backdrop-filter: blur(1.5rem);
+ */
+}
+
+.mobile-nav-toggle {
+	display: none;
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+	.primary-navigation {
+		background: hsl(var(--color-white) / 0.05);
+		backdrop-filter: blur(1.5rem);
+	}
 }
 
 @media (max-width: 35rem) {
 	.primary-navigation {
 		position: fixed;
 		z-index: 1000;
-		background-color: black;
 		inset: 0 0 0 30%;
 		--underline-gap: 0.5rem;
 		list-style: none;
 		padding: min(20rem, 15vh) 2rem;
 		margin: 0;
 		flex-direction: column;
+		transform: translateX(100%);
+	}
+
+	.mobile-nav-toggle {
+		display: block;
+		position: absolute;
+		z-index: 2000;
+		right: 1rem;
+		top: 2rem;
+		background: transparent;
+		border: 0;
+		background-image: url(../shared/icon-hamburger.svg);
+		background-repeat: no-repeat;
+		width: 1.8rem;
+		aspect-ratio: 1;
 	}
 
 	.primary-navigation.underline-indicators > .active {

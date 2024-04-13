@@ -349,7 +349,19 @@ can be also done with: .flow > * + * {}
 	transform: scale(1.5);
 }
 
+/* primary-header */
+
+.logo {
+	margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.primary-header {
+	justify-content: space-between;
+	align-items: center;
+}
+
 .primary-navigation {
+	--gap: clamp(1.5rem, 5vw, 3.5rem);
 	--underline-gap: 2rem;
 	list-style: none;
 	padding: 0;
@@ -357,6 +369,15 @@ can be also done with: .flow > * + * {}
 	background: hsl(var(--color-dark) / 0.95);
 	/* 	backdrop-filter: blur(1.5rem);
  */
+}
+
+.primary-navigation a {
+	text-decoration: none;
+}
+
+.primary-navigation a > span {
+	font-weight: 700;
+	margin-right: 0.5em;
 }
 
 .mobile-nav-toggle {
@@ -384,6 +405,10 @@ can be also done with: .flow > * + * {}
 		transition: transform 500ms ease-in-out;
 	}
 
+	.primary-navigation[data-visible="true"] {
+		transform: translateX(0);
+	}
+
 	.mobile-nav-toggle {
 		display: block;
 		position: absolute;
@@ -409,13 +434,14 @@ can be also done with: .flow > * + * {}
 	}
 }
 
-.primary-navigation a {
-	text-decoration: none;
-}
+@media (min-width: 35em) and (max-width: 45em) {
+	.primary-navigation {
+		padding-inline: 2rem;
+	}
 
-.primary-navigation a > span {
-	font-weight: 700;
-	margin-right: 0.5em;
+	.primary-navigation a > span {
+		display: none;
+	}
 }
 
 /* selecting every direct ascendant child */

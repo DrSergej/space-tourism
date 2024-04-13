@@ -7,8 +7,10 @@ navButton.addEventListener("click", () => {
 	if (visibility === "false") {
 		navMenu.style.transform = "translateX(0%)";
 		navMenu.setAttribute("data-visible", true);
+		navButton.style.backgroundImage = `url("./assets/shared/icon-close.svg")`;
 	} else {
 		navMenu.style.transform = "translateX(100%)";
 		navMenu.setAttribute("data-visible", false);
+		navButton.style.backgroundImage = `url("./assets/shared/icon-hamburger.svg")`;
 	}
 });

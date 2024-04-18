@@ -443,6 +443,7 @@ can be also done with: .flow > * + * {}
 	padding: var(--underline-gap, 1rem) 0;
 	border: 0;
 	border-bottom: 0.2rem solid hsl(var(--color-white) / 0);
+	background-color: transparent;
 }
 
 .underline-indicators > *:hover,
@@ -638,6 +639,10 @@ body {
 
 .grid-container--crew > .crew-details {
 	grid-area: content;
+}
+
+.crew-details h2 {
+	color: hsl(var(--color-white) / 0.5);
 }
 
 @media (min-width: 35em) {

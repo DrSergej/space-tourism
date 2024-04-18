@@ -525,6 +525,44 @@ body {
 	}
 }
 
+/* destination */
+
+.destination {
+	background-image: url(../destination/background-destination-mobile.jpg);
+}
+
+@media (min-width: 35rem) {
+	.destination {
+		background-position: center center;
+		background-image: url(../destination/background-destination-tablet.jpg);
+	}
+}
+
+@media (min-width: 45rem) {
+	.destination {
+		background-image: url(../destination/background-destination-desktop.jpg);
+	}
+}
+
+/* crew */
+
+.crew {
+	background-image: url(../crew/background-crew-mobile.jpg);
+}
+
+@media (min-width: 35rem) {
+	.crew {
+		background-position: center center;
+		background-image: url(../crew/background-crew-tablet.jpg);
+	}
+}
+
+@media (min-width: 45rem) {
+	.crew {
+		background-image: url(../crew/background-crew-desktop.jpg);
+	}
+}
+
 /* -------------------------------------------- */
 /* Layout                                       */
 /* -------------------------------------------- */
@@ -620,6 +658,10 @@ body {
 			"tabs"
 			"image";
 	}
+
+	.grid-container--crew > img {
+		align-self: end;
+	}
 }
 
 @media (min-width: 45rem) {
@@ -673,5 +715,16 @@ body {
 			". title title ."
 			". content image ."
 			". tabs image .";
+	}
+
+	.grid-container--crew > .dot-indicators {
+		justify-self: start;
+	}
+
+	.grid-container--crew .crew-details {
+		justify-self: start;
+	}
+	.grid-container--crew > img {
+		align-self: end;
 	}
 }

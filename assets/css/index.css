@@ -152,6 +152,10 @@ can be also done with: .flow > * + * {}
 	/* outline: 1px solid red; */
 }
 
+.flow--space-small {
+	--flow-space: 0.75rem;
+}
+
 .container {
 	padding-inline: 2em;
 	max-width: 80rem;
@@ -592,7 +596,7 @@ body {
 		"content";
 }
 
-.grid-container--destination > img {
+.grid-container--destination > picture {
 	grid-area: image;
 	max-width: 60%;
 }
@@ -627,7 +631,7 @@ body {
 		"content";
 }
 
-.grid-container--crew > img {
+.grid-container--crew > picture {
 	grid-area: image;
 	max-width: 60%;
 	border-bottom: 1px solid hsl(var(--color-white) / 0.1);
@@ -664,7 +668,7 @@ body {
 			"image";
 	}
 
-	.grid-container--crew > img {
+	.grid-container--crew > picture {
 		align-self: end;
 	}
 }
@@ -705,8 +709,8 @@ body {
 		padding-bottom: 4em;
 	}
 
-	.grid-container--destination > img,
-	.grid-container--crew > img {
+	.grid-container--destination > picture,
+	.grid-container--crew > picture {
 		max-width: 100%;
 	}
 
@@ -729,7 +733,7 @@ body {
 	.grid-container--crew .crew-details {
 		justify-self: start;
 	}
-	.grid-container--crew > img {
+	.grid-container--crew > picture {
 		align-self: end;
 	}
 }

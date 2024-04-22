@@ -1,40 +1,6 @@
 "use strict";
 
-// fetching .json file
-let destinationsData;
-let crewData;
-let technologyData;
-
-fetch("data.json")
-	.then((response) => response.json())
-	.then((data) => {
-		destinationsData = data.destinations;
-		crewData = data.crew;
-		technologyData = data.technology;
-	})
-	.catch((error) => {
-		console.error("Error fetching data:", error);
-	});
-
-// ### mobile-navigation ###
-const navButton = document.querySelector(".mobile-nav-toggle");
-const navMenu = document.querySelector(".primary-navigation");
-
-navButton.addEventListener("click", () => {
-	const visibility = navMenu.getAttribute("data-visible");
-	if (visibility === "false") {
-		// navMenu.style.transform = "translateX(0%)"; //moved to CSS cause of Bugs
-		navMenu.setAttribute("data-visible", true);
-		navButton.style.backgroundImage = `url("./assets/shared/icon-close.svg")`;
-	} else {
-		// navMenu.style.transform = "translateX(100%)"; //moved to CSS cause of Bugs
-		navMenu.setAttribute("data-visible", false);
-		navButton.style.backgroundImage = `url("./assets/shared/icon-hamburger.svg")`;
-	}
-});
-// #######################################################################
-
-/* // ### tabs ###
+// ### tabs ###
 const tabHeading = document.querySelector(".destination-info h2");
 const tabDescription = document.querySelector(".destination-info p");
 const tabMeta1 = document.querySelector(".meta-1 p");
@@ -84,7 +50,4 @@ const loadContent = function (list, target) {
 	htmlImg.setAttribute("alt", target);
 	htmlAltImg.setAttribute("srcset", contentData.images.webp);
 };
-// ####################################################################### */
-
-// ### numbers ###
 // #######################################################################

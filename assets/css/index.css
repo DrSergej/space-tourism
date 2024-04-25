@@ -672,6 +672,7 @@ body {
 /* technology layout */
 .grid-container--technology {
 	--flow-space: 2rem;
+	padding: 0;
 	/* place-items: center; */
 	grid-template-areas:
 		"title"
@@ -804,23 +805,28 @@ body {
 		justify-items: start;
 		grid-template-areas:
 			". title title ."
-			". tabs content image "
-			". tabs content image "
 			". tabs content image ";
+		/* ". tabs content image "; */
+		/* ". tabs content image "; */
 	}
 
 	.grid-container--technology > .number-indicators {
 		justify-self: start;
+		align-self: start;
 		flex-direction: column;
 	}
 
 	.grid-container--technology .technology-details {
-		justify-self: start;
-		z-index: 2;
+		grid-column: 2;
+		justify-self: end;
+		align-self: start;
+		/* z-index: 2; */
 	}
 	.grid-container--technology > picture {
-		/* grid-column: span 5; */
+		grid-column: span 2;
+		justify-self: end;
 		align-self: start;
-		padding-top: 2.5em;
+		/* padding-top: 2.5em; */
+		margin-top: 0;
 	}
 }

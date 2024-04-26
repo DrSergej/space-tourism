@@ -12,6 +12,7 @@
 		/>
 		<link rel="stylesheet" href="./assets/css/index.css" />
 		<script src="index.js" defer></script>
+		<script src="technology.js" defer></script>
 
 		<title>Space tourism website</title>
 	</head>
@@ -78,18 +79,21 @@
 			<button
 				class="fs-400 ff-serif"
 				aria-selected="true"
+				aria-role="launch vehicle"
 			>
 				1
 			</button>
 			<button
 				class="fs-400 ff-serif"
 				aria-selected="false"
+				aria-role="spaceport"
 			>
 				2
 			</button>
 			<button
 				class="fs-400 ff-serif"
-				ff-serifaria-selected="false"
+				aria-selected="false"
+				aria-role="space capsule"
 			>
 				3
 			</button>
@@ -100,7 +104,7 @@
 				<h2 class="fs-400 ff-sans-cond uppercase letter-spacing-2">The terminology...</h2>
 				<p class="fs-700 uppercase ff-serif">Launch vehicle</p>
 			</header>
-			<p>
+			<p class="bio">
 				A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a 
 				payload from Earth's surface to space, usually to Earth orbit or beyond. Our 
 				WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, 
@@ -108,8 +112,8 @@
 			</p>
 		</article>
 		<picture>
-			<source srcset="assets/technology/image-launch-vehicle-portrait.jpg" media="(min-width: 45rem)"/>
-			<source srcset="assets/technology/image-launch-vehicle-landscape.jpg" media="(min-width: 35em)"/>
+			<source class="source-45rem" srcset="assets/technology/image-launch-vehicle-portrait.jpg" media="(min-width: 45rem)"/>
+			<source class="source-35em" srcset="assets/technology/image-launch-vehicle-landscape.jpg" media="(min-width: 35em)"/>
 		
 			<img
 				src="assets/technology/image-launch-vehicle-landscape.jpg"

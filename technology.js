@@ -28,8 +28,8 @@ allNumTabs.forEach((dot) => {
 		const role = dot.getAttribute("aria-role");
 		console.log(role);
 		resetActive(allNumTabs);
-		loadContent(technologyData2, role);
 		dot.setAttribute("aria-selected", true);
+		loadContent(technologyData2, role);
 	});
 });
 
@@ -52,12 +52,13 @@ const findContent = function (list, target) {
 // list = all data to search e.g. crewData, technologyData... target = data you looking for e.g. moon, mars,...
 const loadContent = function (list, target) {
 	const contentData = findContent(list, target);
-	dotHeading.innerText = contentData.role;
-	dotDescription.innerText = contentData.name;
-	dotBio.innerText = contentData.bio;
-	htmlImg.setAttribute("src", contentData.images.png);
+	// techHeading.innerText = contentData.role;
+	techDescription.innerText = contentData.name;
+	dotBio.innerText = contentData.description;
+	htmlAltImg1.setAttribute("srcset", contentData.images.portrait);
+	htmlAltImg2.setAttribute("srcset", contentData.images.landscape);
+	htmlImg.setAttribute("src", contentData.images.landscape);
 	htmlImg.setAttribute("alt", target);
-	htmlAltImg.setAttribute("srcset", contentData.images.webp);
 };
 
 // #######################################################################

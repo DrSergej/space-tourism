@@ -812,6 +812,7 @@ body {
 	}
 
 	.grid-container--technology > .number-indicators {
+		grid-column: 2;
 		justify-self: start;
 		align-self: start;
 		flex-direction: column;
@@ -821,7 +822,7 @@ body {
 		grid-column: 2;
 		justify-self: end;
 		align-self: start;
-		z-index: 2;
+		/* z-index: 2; */
 	}
 	.grid-container--technology > picture {
 		grid-column: span 2;
@@ -833,10 +834,10 @@ body {
 	}
 }
 
-@media (min-width: 65.625rem) {
+/* @media (min-width: 65.625rem) {
 	.grid-container--technology > .number-indicators {
 		justify-self: start;
 		align-self: start;
 		flex-direction: row;
 	}
-}
+} */

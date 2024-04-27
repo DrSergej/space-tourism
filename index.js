@@ -34,6 +34,26 @@ navButton.addEventListener("click", () => {
 });
 // #######################################################################
 
+// ### main navigation padding clickable ###
+const listItems = document.querySelectorAll("#primary-navigation li");
+
+listItems.forEach(function (item) {
+	item.addEventListener("click", function (event) {
+		event.preventDefault();
+
+		// Get the <a> tag within the clicked <li> item
+		const link = item.querySelector("a");
+
+		// Get the href attribute value of the <a> tag
+		const href = link.getAttribute("href");
+
+		// Navigate to the URL specified in the href attribute
+		window.location.href = href;
+	});
+});
+
+// #######################################################################
+
 /* // ### tabs ###
 const tabHeading = document.querySelector(".destination-info h2");
 const tabDescription = document.querySelector(".destination-info p");

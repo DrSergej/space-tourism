@@ -485,7 +485,7 @@ can be also done with: .flow > * + * {}
 
 .number-indicators > * {
 	cursor: pointer;
-	padding: 1em 2em;
+	padding: 1em 1.45em;
 	aspect-ratio: 1/1;
 	border: 2px solid hsl(var(--color-white) / 0.15);
 	border-radius: 50%;
@@ -684,16 +684,25 @@ body {
 .grid-container--technology > picture {
 	grid-area: image;
 	max-width: 100%;
+	margin-top: 0;
 	/* align-self: start; */
 }
 
 .grid-container--technology > .number-indicators {
 	grid-area: tabs;
+	margin-top: 0;
 }
 
 .grid-container--technology > .technology-details {
 	grid-area: content;
+	margin-top: 0;
+	padding-bottom: 4em;
+	margin-inline: 2em;
 }
+
+/* .bio {
+	max-width: 50ch;
+} */
 
 @media (min-width: 35em) {
 	.numbered-title {
@@ -801,12 +810,12 @@ body {
 	.grid-container--technology {
 		/* grid-template-rows: max-content; */
 		grid-template-columns:
-			minmax(1rem, 1fr) minmax(0, 38rem) minmax(0, 15rem)
+			minmax(1rem, 1fr) minmax(0, 4rem) minmax(0, 38rem) minmax(0, 15rem)
 			minmax(1rem, 1fr);
 		justify-items: start;
 		grid-template-areas:
-			". title title ."
-			". tabs content image ";
+			". title title title ."
+			". tabs content . image ";
 		/* ". tabs content image "; */
 		/* ". tabs content image "; */
 	}
@@ -819,9 +828,10 @@ body {
 	}
 
 	.grid-container--technology .technology-details {
-		grid-column: 2;
-		justify-self: end;
+		grid-column: 3;
+		justify-self: center;
 		align-self: start;
+		margin-inline: 1em;
 		/* z-index: 2; */
 	}
 	.grid-container--technology > picture {
@@ -833,11 +843,3 @@ body {
 		scale: 1.2;
 	}
 }
-
-/* @media (min-width: 65.625rem) {
-	.grid-container--technology > .number-indicators {
-		justify-self: start;
-		align-self: start;
-		flex-direction: row;
-	}
-} */

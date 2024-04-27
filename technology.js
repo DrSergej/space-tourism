@@ -5,7 +5,7 @@ fetch("data.json")
 	.then((response) => response.json())
 	.then((data) => {
 		technologyData2 = data.technology;
-		console.log(technologyData2);
+		// console.log(technologyData2);
 	})
 	.catch((error) => {
 		console.error("Error fetching data:", error);
@@ -26,7 +26,7 @@ const htmlAltImg2 = document.querySelector(".source-35em");
 allNumTabs.forEach((dot) => {
 	dot.addEventListener("click", function () {
 		const role = dot.getAttribute("aria-role");
-		console.log(role);
+		// console.log(role);
 		resetActive(allNumTabs);
 		dot.setAttribute("aria-selected", true);
 		loadContent(technologyData2, role);
@@ -45,7 +45,7 @@ const resetActive = function (items) {
 // list = all data to search e.g. crewData, technologyData... target = data you looking for e.g. moon, mars,...
 const findContent = function (list, target) {
 	const found = list.find((el) => el.name.toLowerCase() === target);
-	console.log("FOUND", found);
+	// console.log("FOUND", found);
 	return found;
 };
 

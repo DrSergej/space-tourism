@@ -1,4 +1,4 @@
 # Frontend-mentor space-tourism-challenge
-# Multi-page website
-# Mobiel frist design
-# Fully responsive
+### Multi-page website
+### Mobile frist design
+### Fully responsive

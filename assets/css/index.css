@@ -576,7 +576,7 @@ body {
 
 @media (min-width: 35rem) {
 	.technology {
-		background-position: center center;
+		/* background-position: center center; */
 		background-image: url(../technology/background-technology-tablet.jpg);
 	}
 }
@@ -708,6 +708,11 @@ body {
 	.numbered-title {
 		justify-self: start;
 		margin-top: 2rem;
+		padding-left: 0.5em;
+	}
+
+	.grid-container--destination {
+		padding-inline: 0;
 	}
 
 	.destination-meta {
@@ -733,6 +738,10 @@ body {
 			"image"
 			"tabs"
 			"content";
+	}
+
+	.grid-container--technology .numbered-title {
+		padding-left: 1em;
 	}
 }
 
@@ -835,11 +844,23 @@ body {
 		/* z-index: 2; */
 	}
 	.grid-container--technology > picture {
+		/* grid-row: span 2; */
 		grid-column: span 2;
 		justify-self: center;
 		align-self: start;
 		/* padding-top: 2.5em; */
 		margin-top: 0;
-		scale: 1.2;
+	}
+}
+
+@media (min-width: 95rem) {
+	.grid-container--technology > picture {
+		/* grid-row: span 2; */
+		grid-column: span 2;
+		justify-self: center;
+		align-self: start;
+		/* padding-top: 2.5em; */
+		margin-top: 0;
+		scale: clamp(1, 1.25, 1.5);
 	}
 }
